@@ -1,8 +1,17 @@
+import AllRoutes from "./AllRoutes/AllRoutes";
 import "./App.css";
+import Navbar from "./Components/Navbar";
+import Login from "./Pages/Login";
+import Signup from "./Pages/Signup";
 
 function App() {
   return <div className="App">
-  <h2 className="bg-red-600 text-3xl font-bold text-white">Task</h2>
+  
+  {/* <Signup/>
+  <Login/> */}
+  
+  <Navbar/>
+  <AllRoutes/>
 
   </div>;
 }
