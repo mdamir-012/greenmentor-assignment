@@ -37,10 +37,10 @@ taskController.delete("/delete/:id",async(req,res)=>{
   const {id}=req.params;
   const taskDelete= await taskModel.findByIdAndDelete({_id:id,userId: req.body.userId})
   if(taskDelete){
-    res.send("deleted successfully")
+    res.json({msg:"deleted successfully"})
 
   }else{
-    res.send("not deleted")
+    res.json({msg:"not deleted"})
   }
   
 })
@@ -50,10 +50,10 @@ taskController.patch("/edit/:id",async(req,res)=>{
   const {id}=req.params;
   const updateTask=await taskModel.findByIdAndUpdate({_id:id,userId:req.body.userId},{...req.body})
   if(updateTask){
-    res.send("edit successfully")
+    res.json({msg:"edit successfully"})
    
   }else{
-    res.send("not updated")
+    res.json({msg:"not edited"})
     
   }
 })

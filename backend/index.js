@@ -1,4 +1,5 @@
 const express=require("express");
+const cors=require("cors");
 const { connection } = require("./config/db");
 const { userController } = require("./routes/user.route");
 const { authentication } = require("./middlewares/authentication");
@@ -10,6 +11,8 @@ app.use(express.json());
 app.get("/",(req,res)=>{
     res.send("welcome to greenmentor Api");
 })
+
+app.use(cors())
 
 app.use("/user",userController);
 app.use(authentication)
