@@ -53,7 +53,7 @@ export const createTask = (taskData) => async (dispatch) => {
     dispatch(taskRequest());
     const token = localStorage.getItem("mytoken");
     const response = await axios.post(
-      "http://localhost:8000/task/create",
+      "https://agile-eel-button.cyclic.app/task/create",
       taskData,
       {
         headers: {
@@ -63,6 +63,7 @@ export const createTask = (taskData) => async (dispatch) => {
     );
     dispatch(postTaskSuccess(response.data));
     console.log(response.data);
+    alert("added task successfully")
     return response;
   } catch (error) {
     dispatch(taskError(error?.response?.data));
@@ -110,6 +111,7 @@ export const updateTask = (id, updatedData) => async (dispatch) => {
     const result = await response.json();
     console.log("Success:", result);
     dispatch(getTaskSuccess(result));
+    alert("edited task successfully")
   } catch (error) {
     console.error("Error:", error);
   }
@@ -128,6 +130,7 @@ export const deleteTaskData = (id) => async (dispatch) => {
     console.log(response);
     console.log("deletd successfully");
     dispatch(getTaskSuccess());
+    alert("deleted task successfully")
   } catch (error) {
     console.error("Error:", error);
   }
