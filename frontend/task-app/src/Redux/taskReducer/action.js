@@ -8,7 +8,7 @@ import {
   UPDATE_TASK_SUCCSESS,
 } from "./actionType";
 
-const BASE_URL = process.env.REACT_APP_BASEURL;
+
 
 // Action creator for task request
 export const taskRequest = () => ({
@@ -72,25 +72,12 @@ export const createTask = (taskData) => async (dispatch) => {
 };
 
 export const getAllTasks = async (dispatch) => {
-  // dispatch(taskRequest());
-
-  // try {
-  //   const token = localStorage.getItem("mytoken");
-  //   const response = await axios.get("http://localhost:8000/task/read", {
-  //     headers: {
-  //       Authorization: `Bearer ${token}`,
-  //     },
-  //   });
-  //   console.log(response, "response");
-  //   dispatch(getTaskSuccess(response.data));
-  // } catch (error) {
-  //   dispatch(taskError(error?.response?.data));
-  // }
+ 
 
   try {
     dispatch(taskRequest());
     const token = localStorage.getItem("mytoken");
-    const response = await fetch(`http://localhost:8000/task/read`, {
+    const response = await fetch(`https://agile-eel-button.cyclic.app/task/read`, {
       method: "GET", // or 'PUT'
       headers: {
         Authorization: `Bearer ${token}`,
@@ -112,7 +99,7 @@ export const getAllTasks = async (dispatch) => {
 export const updateTask = (id, updatedData) => async (dispatch) => {
   try {
     const token = localStorage.getItem("mytoken");
-    const response = await fetch(`http://localhost:8000/task/edit/${id}`, {
+    const response = await fetch(`https://agile-eel-button.cyclic.app/task/edit/${id}`, {
       method: "PATCH", // or 'PUT'
       headers: {
         Authorization: `Bearer ${token}`,
@@ -131,7 +118,7 @@ export const updateTask = (id, updatedData) => async (dispatch) => {
 export const deleteTaskData = (id) => async (dispatch) => {
   try {
     const token = localStorage.getItem("mytoken");
-    const response = await fetch(`http://localhost:8000/task/delete/${id}`, {
+    const response = await fetch(`https://agile-eel-button.cyclic.app/task/delete/${id}`, {
       method: "DELETE",
       headers: {
         Authorization: `Bearer ${token}`,

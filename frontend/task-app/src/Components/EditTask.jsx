@@ -27,6 +27,7 @@ const EditTask = ({ _id, editFun }) => {
           name="title"
           value={form.title}
           onChange={handleChange}
+          className="border-2 border-gray-400 rounded-md mb-1 pl-2 "
         />
         <br />
         <input
@@ -35,9 +36,10 @@ const EditTask = ({ _id, editFun }) => {
           name="description"
           value={form.description}
           onChange={handleChange}
+          className="border-2 border-gray-400 rounded-md pl-2"
         />
         <br />
-        <input type="submit" name="Submit" />
+        <input type="submit" name="Submit" className="bg-lime-600 hover:bg-green-600 rounded-md text-white px-4 cursor-pointer mt-3"/>
       </form>
     </div>
   );

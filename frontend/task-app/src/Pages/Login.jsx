@@ -23,7 +23,7 @@ const Login = () => {
   const fetchData = async (formData) => {
     try {
       dispatch(postUserReq());
-      const response = await fetch("http://localhost:8000/user/login", {
+      const response = await fetch("https://agile-eel-button.cyclic.app/user/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -39,7 +39,7 @@ const Login = () => {
         localStorage.setItem("mytoken",result.token)
       }
       alert("Login Successfull!")
-      navigate("/tasklist")
+      navigate("/")
     } catch (error) {
       console.error("Error:", error);
       dispatch(postUserError());
@@ -76,6 +76,7 @@ const Login = () => {
           value={formData.email}
           onChange={handleChange}
           className="w-full border-2 rounded-md my-4 px-2"
+          required
         />
         <br />
         <input
@@ -85,6 +86,7 @@ const Login = () => {
           value={formData.password}
           onChange={handleChange}
           className="w-full border-2 rounded-md mb-6 px-2"
+          required
         />
         <br />
         <input type="submit" name="Submit" className="bg-green-400 hover:bg-green-700 cursor-pointer text-white w-full rounded-md px-6 font-semibold py-2 "/>

@@ -1,11 +1,34 @@
-import React from 'react'
+import React, { useState } from "react";
+import AddTask from "../Components/AddTask";
+import TaskList from "../Components/TaskList";
 
 const Home = () => {
-  return (
-    <div>
-      <h1 className='mt-10 font-semibold text-lg'>home</h1>
-    </div>
-  )
-}
+  const [show, setShow] = useState(false);
 
-export default Home
+  const handleToggle = () => {
+    setShow(!show);
+  };
+
+  return (
+    <div className="text-center mr-8 mt-20">
+      
+      <div>
+        <button
+          className="text-lg font-semibold bg-yellow-200 px-6 rounded-md"
+          onClick={handleToggle}
+        >
+          Add Task
+        </button>
+      </div>
+
+      {show ? <AddTask /> : ""}
+      <br />
+
+      <div>
+        <TaskList />
+      </div>
+    </div>
+  );
+};
+
+export default Home;

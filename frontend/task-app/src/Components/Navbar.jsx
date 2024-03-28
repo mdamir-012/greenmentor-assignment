@@ -9,13 +9,7 @@ const Navbar = () => {
 
   const {  isLogin } = useSelector((state) => state.userReducer);
   console.log(isLogin);
-  // const links = [
-  //   { path: "/", title: "Home" },
-  //   { path: "/signup", title: "Signup" },
-  //   { path: "/login", title: "Login" },
-  //   { path: "/tasklist", title: "TaskList" },
-  //   { path: "/addtask", title: "AddTask" },
-  // ];
+ 
 
   const handleLogout = () => {
     localStorage.removeItem("token");
@@ -53,11 +47,7 @@ const Navbar = () => {
       </nav>
 
       <br />
-      {/* {links.map((elem) => (
-        <Link key={elem.path} to={elem.path}>
-          {elem.title}
-        </Link>
-      ))} */}
+     
     </div>
   );
 };
