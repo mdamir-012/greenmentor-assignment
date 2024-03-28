@@ -3,7 +3,8 @@
 
 ## Overview
 
-This frontend application is part of a task management system that allows users to log in, sign up, create tasks, update and delete tasks, and maintain their profiles. Users can also upload images for their profiles.
+This Project application is part of a task management system built with React that allows users to log in, sign up, create tasks, update and delete tasks, and maintain their profiles.
+
 ## Deploy
    [Frontend](https://task-app-sage-two.vercel.app/)
    [Backend](https://agile-eel-button.cyclic.app/)
